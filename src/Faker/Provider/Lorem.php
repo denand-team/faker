@@ -97,7 +97,7 @@ class Lorem extends Base
         }
 
         $words = static::words($nbWords);
-        $words[0] = ucwords($words[0]);
+        $words[0] = function_exists('mb_ucfirst') ? mb_ucfirst($words[0]) : ucwords($words[0]);
 
         return implode(' ', $words) . '.';
     }
@@ -212,7 +212,7 @@ class Lorem extends Base
 
         if ($type === 'word') {
             // capitalize first letter
-            $text[0] = ucwords($text[0]);
+            $text[0] = function_exists('mb_ucfirst') ? mb_ucfirst($text[0]) : ucwords($text[0]);
 
             // end sentence with full stop
             $text[count($text) - 1] .= '.';
