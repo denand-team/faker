@@ -552,6 +552,18 @@ use Faker\Container\ContainerInterface;
  * @property string $uuid
  *
  * @method string uuid()
+ *
+ * @property string $youtubeId
+ *
+ * @method string youtubeId()
+ *
+ * @property string $youtubeUri
+ *
+ * @method string youtubeUri()
+ * @method string youtubeShortUri()
+ * @method string youtubeEmbedCode()
+ * @method string youtubeChannelUri()
+ * @method string youtubeRandomUri()
  */
 class Generator
 {
