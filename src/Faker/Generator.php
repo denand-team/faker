@@ -636,7 +636,7 @@ class Generator
      *
      * @throws \OverflowException When no unique value can be found by iterating $maxRetries times
      *
-     * @return self A proxy class returning only non-existing values
+     * @return UniqueGenerator A proxy class returning only non-existing values
      */
     public function unique($reset = false, $maxRetries = 10000)
     {
@@ -652,7 +652,7 @@ class Generator
      *
      * @param float $weight A probability between 0 and 1, 0 means that we always get the default value.
      *
-     * @return self
+     * @return ChanceGenerator
      */
     public function optional(float $weight = 0.5, $default = null)
     {
@@ -687,7 +687,7 @@ class Generator
      *
      * @throws \OverflowException When no valid value can be found by iterating $maxRetries times
      *
-     * @return self A proxy class returning only valid values
+     * @return ValidGenerator A proxy class returning only valid values
      */
     public function valid(?\Closure $validator = null, int $maxRetries = 10000)
     {
