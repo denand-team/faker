@@ -2,6 +2,7 @@
 
 namespace Faker;
 
+use Closure;
 use Faker\Container\ContainerInterface;
 
 /**
@@ -968,6 +969,17 @@ class Generator
         trigger_deprecation('fakerphp/faker', '1.14', 'Protected method "callFormatWithMatches()" is deprecated and will be removed.');
 
         return $this->format($matches[1]);
+    }
+
+    /**
+     * Вызов замыкания.
+     *
+     * @param Closure $callback
+     * @return mixed
+     */
+    public function call(Closure $callback)
+    {
+        return $callback($this);
     }
 
     /**
