@@ -76,6 +76,20 @@ class Lorem extends Base
     }
 
     /**
+     * Заголовок с первой заглавной буквой.
+     *
+     * @param $nb
+     * @return string
+     */
+    public static function heading($nb = 3)
+    {
+        $words = static::words($nb, true);
+        return function_exists('mb_ucfirst')
+            ? mb_ucfirst($words)
+            : ucwords($words);
+    }
+
+    /**
      * Generate a random sentence
      *
      * @example 'Lorem ipsum dolor sit amet.'

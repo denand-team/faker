@@ -565,6 +565,8 @@ use Faker\Container\ContainerInterface;
  * @method string youtubeEmbedCode()
  * @method string youtubeChannelUri()
  * @method string youtubeRandomUri()
+ *
+ * @method array|string heading($nb = 3)
  */
 class Generator
 {
